@@ -5,4 +5,5 @@
 -lib hx3compat
 -lib format
 -lib hxbit
+-lib uuid
 -D lz4js

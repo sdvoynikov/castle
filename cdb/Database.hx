@@ -18,6 +18,7 @@ import cdb.Data.Column;
 import cdb.Data.ColumnType;
 import cdb.Data.CustomType;
 import cdb.Data.CustomTypeCase;
+import uuid.Uuid;
 
 class Database {
 
@@ -263,7 +264,9 @@ class Database {
 			return null;
 		return switch( c.type ) {
 		case TInt, TFloat, TEnum(_), TFlags(_), TColor: 0;
-		case TString, TId, TImage, TLayer(_), TFile: "";
+		case TId:
+			Uuid.v4();
+		case TString, TImage, TLayer(_), TFile: "";
 		case TRef(s):
 			var s = getSheet(s);
 			var l = s.lines[0];

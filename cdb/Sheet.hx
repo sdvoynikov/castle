@@ -165,6 +165,7 @@ class Sheet {
 			sheet.lines.insert(index + 1, o);
 			changeLineOrder([for( i in 0...sheet.lines.length ) i <= index ? i : i + 1]);
 		}
+		sync();
 		return o;
 	}
 
